@@ -1,4 +1,3 @@
-require('dotenv').config()
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -20,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect("mongodb+srv://anmolali5811:ptNRFMNFjwRBV6fN@cluster0.c2hacwz.mongodb.net/?retryWrites=true&w=majority");
 app.get('/', (req, res) => {  
   res.send("We are live...")
 });
