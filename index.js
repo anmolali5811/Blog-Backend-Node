@@ -21,7 +21,9 @@ app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 mongoose.connect(process.env.MONGODB_URL);
-
+app.get('/', (req, res) => {  
+  res.send("We are live...")
+});
 app.post('/register', async (req,res) => {
   const {username,password} = req.body;
   try{
